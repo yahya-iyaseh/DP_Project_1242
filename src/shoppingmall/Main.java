@@ -3,6 +3,8 @@ package shoppingmall;
 import shoppingmall.factories.*;
 import shoppingmall.payment.*;
 import shoppingmall.observer.*;
+import shoppingmall.memento.CartMemento;
+import shoppingmall.memento.CartHistory;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,16 +18,23 @@ public class Main {
         Customer customer = new Customer("Yahya");
         mall.enter(customer);
         customer.enterStore(bookStore);
-
         ShoppingCart cart = customer.getShoppingCart();
 
-        // Observer Pattern: Add observers to the cart
         cart.addObserver(new EmailNotifier("yahya@example.com"));
-        cart.addObserver(new SMSNotifier("+972123456789"));
-
-        // Add item and checkout
         cart.addItem(bookStore.items().nextElement());
-        cart.setPaymentStrategy(new CreditCardPayment()); // Strategy Pattern
+
+        CartHistory history = new CartHistory();
+        // Memento Pattern: Save current cart state
+        history.save(cart.saveStateToMemento());
+
+        // Add another item
+        cart.addItem(bookStore.items().nextElement());
+
+        // Change mind, restore previous state
+        cart.restoreFromMemento(history.restore());
+
+        // Pay
+        cart.setPaymentStrategy(new PayPalPayment());
         cart.checkout();
     }
 }

@@ -1,5 +1,6 @@
 package shoppingmall;
 
+import shoppingmall.memento.CartMemento;
 import shoppingmall.payment.PaymentStrategy;
 import shoppingmall.observer.CartObserver;
 
@@ -55,5 +56,18 @@ public class ShoppingCart {
 
         notifyObservers("Checkout complete. Total paid: $" + total);
 
+    }
+
+    // Memento design pattern, I added it from my side for testing it.
+    // more details can be found through the link: https://refactoring.guru/design-patterns/memento
+    public CartMemento saveStateToMemento() {
+        return new CartMemento(items);
+    }
+
+    public void restoreFromMemento(CartMemento memento) {
+        if (memento != null) {
+            items = new ArrayList<>(memento.getSavedItems());
+            System.out.println("Cart state restored.");
+        }
     }
 }
