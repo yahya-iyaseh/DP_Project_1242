@@ -9,8 +9,6 @@ public class BookStoreFactory implements StoreFactory {
     private BookStoreFactory() {
     }
 
-    ;
-
     public static synchronized BookStoreFactory getInstance() {
         if (instance == null)
             instance = new BookStoreFactory();
