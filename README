@@ -1,112 +1,55 @@
 # 🏬 Java Mall System — Design Patterns Implementation
 
-## 📖 Project Overview
-This Java-based project simulates a command-line shopping mall system designed to demonstrate the practical use of **object-oriented design principles** and **12 core design patterns**. It includes a modular architecture, extensibility, and an intuitive CLI interface for customer interaction.
+![Java](https://img.shields.io/badge/Java-17%2B-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Design Patterns](https://img.shields.io/badge/Design%20Patterns-12-yellow)
 
-The application models real-world shopping behaviors: browsing stores, adding items to a cart, selecting payment methods, checking out, saving/restoring carts, and simulating order lifecycle transitions.
+A Java-based command-line shopping mall system demonstrating practical implementation of **12 core design patterns** with modular architecture and extensible design.
 
----
-
-## 🔍 Applied Design Patterns
-| Design Pattern            | Role in System                                                                 |
-|--------------------------|------------------------------------------------------------------------------|
-| **Singleton**            | Manages single instances of store factories                                  |
-| **Factory / Abstract Factory** | Handles creation of different stores and products                        |
-| **Iterator**             | Traverses customers, items, and stores without exposing internals            |
-| **Strategy**             | Allows dynamic selection of payment methods                                  |
-| **Observer**             | Notifies customer via email on cart actions                                  |
-| **Memento**              | Saves and restores shopping cart state                                       |
-| **Command**              | Encapsulates actions like placing, modifying, and canceling orders           |
-| **State**                | Controls order lifecycle transitions                                         |
-| **Proxy**                | Controls and secures access to review functionality                          |
-| **Decorator**            | Adds dynamic discounts to items without altering original class              |
-| **Chain of Responsibility** | Stacks discount logic in an organized, scalable way                     |
-
----
+## 📖 Table of Contents
+- [Features](#-features)
+- [Applied Design Patterns](#-applied-design-patterns)
+- [Getting Started](#-getting-started)
+  - [Prerequisites](#-prerequisites)
+  - [Installation & Usage](#-installation--usage)
+- [Project Structure](#-project-structure)
+- [License](#-license)
+- [Author](#-author)
 
 ## 🎯 Features
-- One interactive customer session
+- Interactive CLI shopping experience
 - Three store types: **BookWorld**, **ShoeZone**, **GameSpot**
-- Each store contains **five unique items**
-- Cart supports dynamic **save/restore (Memento)**
-- Payment via **Credit Card or PayPal** (Strategy)
-- Notifications sent via **Observer Pattern**
-- Reviews handled securely using **Proxy**
-- Orders simulate transitions via **State Pattern**
-- Dynamic discounts applied via **Decorator + CoR**
+- Five unique items per store
+- Cart state persistence (save/restore)
+- Multiple payment methods (Credit Card/PayPal)
+- Email notifications for cart actions
+- Secure review system
+- Order lifecycle simulation
+- Dynamic discount system
 
----
+## 🔍 Applied Design Patterns
+| Pattern | Implementation |
+|---------|----------------|
+| **Singleton** | Manages single instances of store factories |
+| **Factory/Abstract Factory** | Creates stores and products |
+| **Iterator** | Traverses collections without exposing internals |
+| **Strategy** | Dynamic payment method selection |
+| **Observer** | Email notifications for cart actions |
+| **Memento** | Cart state save/restore functionality |
+| **Command** | Order management operations |
+| **State** | Order lifecycle transitions |
+| **Proxy** | Secure review access control |
+| **Decorator** | Dynamic item discounts |
+| **Chain of Responsibility** | Stackable discount logic |
 
-## 🛠 How to Run
+## 🛠 Getting Started
 
 ### 📦 Prerequisites
-- Java 17 or higher installed
-- CLI terminal or supported IDE (e.g. IntelliJ IDEA, Eclipse)
+- Java JDK 17+
+- CLI terminal or Java IDE (IntelliJ/Eclipse recommended)
 
-### 🧪 Compile and Run
-Assuming your folder is structured like this:
-```
-project/
-├── src/
-│   └── shoppingmall/
-│       └── MainApp.java
-│       └── (other shoppingmall classes/packages)
-```
+### 🧪 Installation & Usage
 
-1. **Compile**:
+1. **Clone the repository** (if applicable)
 ```bash
-javac -d bin src/shoppingmall/**/*.java
-```
-
-2. **Run** (MainApp is inside the `shoppingmall` package):
-```bash
-java -cp bin shoppingmall.MainApp
-```
-
-3. **Usage Flow**:
-- Enter your name to start
-- View available stores
-- Browse store inventory
-- Add items to cart
-- Save/restore your cart state
-- Choose payment method and checkout
-- Submit or view product reviews
-- Simulate full order lifecycle (New → Delivered)
-
----
-
-## 📁 Project Structure
-```
-shoppingmall/               # Domain and business logic
-├── factories/              # Store creation (Factory/Singleton)
-├── payment/                # Payment methods (Strategy)
-├── observer/               # Notification system (Observer)
-├── command/                # Order management (Command)
-├── memento/                # Cart state (Memento)
-├── state/                  # Order states (State)
-├── proxy/                  # Review access control (Proxy)
-├── discount/               # Discounts (Decorator + CoR)
-└── MainApp.java            # CLI interface entry point
-```
-
----
-
-## ✅ Project Requirements Checklist
-- [x] One interactive customer
-- [x] Three stores implemented via factory pattern
-- [x] Five items in each store
-- [x] CLI with interactive navigation
-- [x] Implementation of 10+ design patterns
-
----
-
-## 🙌 Author
-**Yahya** — Software Developer | Design Pattern Enthusiast
-
----
-
-## 📌 License
-This project is released for educational purposes under the MIT License.
-
-Let the patterns power your project! 🧠✨
-
+git clone https://github.com/yourusername/java-mall-system.git
