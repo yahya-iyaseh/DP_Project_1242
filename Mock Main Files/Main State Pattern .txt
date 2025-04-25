@@ -1,0 +1,17 @@
+package shoppingmall;
+
+import shoppingmall.state.OrderContext;
+
+public class Main {
+    public static void main(String[] args) {
+        OrderContext order = new OrderContext();
+
+        System.out.println("Current State: " + order.getStateName());
+        order.pay();     // Transition to PaidState
+        order.ship();    // Transition to ShippedState
+        order.deliver(); // Transition to DeliveredState
+        order.cancel();  // Should fail (already delivered)
+
+        System.out.println("Final State: " + order.getStateName());
+    }
+}

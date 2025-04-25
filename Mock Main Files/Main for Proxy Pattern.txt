@@ -1,0 +1,21 @@
+package shoppingmall;
+
+import shoppingmall.proxy.ReviewService;
+import shoppingmall.proxy.ReviewServiceProxy;
+
+public class Main {
+    public static void main(String[] args) {
+        String productId = "B001";
+
+        // Guest user
+        ReviewService guest = new ReviewServiceProxy("guest", false);
+        guest.viewReviews(productId);
+        guest.postReview(productId, "Nice book!", "guest");
+
+        // Authenticated user
+        ReviewService yahya = new ReviewServiceProxy("Yahya", true);
+        yahya.viewReviews(productId); // should see "No reviews yet"
+        yahya.postReview(productId, "Excellent Java guide!", "Yahya");
+        yahya.viewReviews(productId);
+    }
+}

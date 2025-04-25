@@ -1,0 +1,35 @@
+package shoppingmall;
+
+import shoppingmall.factories.*;
+import shoppingmall.payment.*;
+
+public class Main {
+
+
+    public static void main(String[] args) {
+        Mall mall = new Mall("Java Mall");
+
+        // Create stores via Factory + Singleton
+        Store bookStore = BookStoreFactory.getInstance().createStore("Books & Co", "BS001");
+        mall.addStore(bookStore);
+
+        // Add items
+        bookStore.addItem(new Item("Effective Java", "B001", bookStore.getId(), 45.00));
+        bookStore.addItem(new Item("Clean Code", "B002", bookStore.getId(), 40.00));
+
+        // Customer shopping
+        Customer customer = new Customer("Yahya");
+        mall.enter(customer);
+
+        customer.enterStore(bookStore);
+        customer.getShoppingCart().addItem(bookStore.items().nextElement()); // Add first book
+
+        // Strategy Pattern in action: choose a payment method dynamically
+        customer.getShoppingCart().setPaymentStrategy(new PayPalPayment());
+        customer.getShoppingCart().checkout();
+
+        // Change payment method at runtime
+        customer.getShoppingCart().setPaymentStrategy(new CreditCardPayment());
+        customer.getShoppingCart().checkout();
+    }
+}

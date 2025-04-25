@@ -1,0 +1,46 @@
+package shoppingmall;
+
+import shoppingmall.factories.*;
+import shoppingmall.observer.*;
+import shoppingmall.command.*;
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Mall mall = new Mall("Java Mall");
+
+        Store bookStore = BookStoreFactory.getInstance().createStore("Books & Co", "BS001");
+        mall.addStore(bookStore);
+        Item book1 = new Item("Effective Java", "B001", bookStore.getId(), 45.00);
+        Item book2 = new Item("Clean Code", "B002", bookStore.getId(), 40.00);
+        bookStore.addItem(book1);
+        bookStore.addItem(book2);
+
+        Customer customer = new Customer("Yahya");
+        mall.enter(customer);
+        customer.enterStore(bookStore);
+
+        ShoppingCart cart = customer.getShoppingCart();
+        cart.addObserver(new EmailNotifier("yahya@example.com"));
+        cart.addItem(book1);
+        cart.addItem(book2);
+
+        // Create order object from cart items
+        Order order = new Order(customer.getName(), new ArrayList<>(List.of(book1, book2)));
+
+        // Commands
+        OrderCommand placeCmd = new PlaceOrderCommand(order);
+        OrderCommand cancelCmd = new CancelOrderCommand(order);
+        OrderCommand modifyCmd = new ModifyOrderCommand(order, new Item("Refactoring", "B003", bookStore.getId(), 50.00));
+
+        // Invoker
+        OrderManager manager = new OrderManager();
+        manager.addCommand(placeCmd);
+        manager.addCommand(modifyCmd);
+        manager.addCommand(cancelCmd);
+
+        // Execute all
+        manager.processOrders();
+    }
+}
