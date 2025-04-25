@@ -2,7 +2,7 @@
 
 A Java-based command-line shopping mall system demonstrating practical implementation of **12 core design patterns** with modular architecture and extensible design.
 
-## Table of Contents
+Table of Contents
 - [Features](#-features)
 - [Applied Design Patterns](#-applied-design-patterns)
 - [Getting Started](#-getting-started)
@@ -12,7 +12,7 @@ A Java-based command-line shopping mall system demonstrating practical implement
 - [License](#-license)
 - [Author](#-author)
 
-##  Features
+Features
 - Interactive CLI shopping experience
 - Three store types: **BookWorld**, **ShoeZone**, **GameSpot**
 - Five unique items per store
@@ -23,7 +23,7 @@ A Java-based command-line shopping mall system demonstrating practical implement
 - Order lifecycle simulation
 - Dynamic discount system
 
-## Applied Design Patterns
+Applied Design Patterns
 | Pattern | Implementation |
 |---------|----------------|
 | **Singleton** | Manages single instances of store factories |
@@ -38,11 +38,11 @@ A Java-based command-line shopping mall system demonstrating practical implement
 | **Decorator** | Dynamic item discounts |
 | **Chain of Responsibility** | Stackable discount logic |
 
-### Prerequisites
+Prerequisites
 - Java JDK 17+
 - CLI terminal or Java IDE (IntelliJ/Eclipse recommended)
 
-###  Usage
+Usage
 
 - Run the Main Class included on the shoppingmall package.
 Or
