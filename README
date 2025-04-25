@@ -1,4 +1,4 @@
-# 🏬 Java Mall System — Design Patterns Implementation
+# Java Mall System — DP_Project_1242
 
 ![Java](https://img.shields.io/badge/Java-17%2B-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
@@ -6,7 +6,7 @@
 
 A Java-based command-line shopping mall system demonstrating practical implementation of **12 core design patterns** with modular architecture and extensible design.
 
-## 📖 Table of Contents
+## Table of Contents
 - [Features](#-features)
 - [Applied Design Patterns](#-applied-design-patterns)
 - [Getting Started](#-getting-started)
@@ -16,7 +16,7 @@ A Java-based command-line shopping mall system demonstrating practical implement
 - [License](#-license)
 - [Author](#-author)
 
-## 🎯 Features
+##  Features
 - Interactive CLI shopping experience
 - Three store types: **BookWorld**, **ShoeZone**, **GameSpot**
 - Five unique items per store
@@ -44,12 +44,12 @@ A Java-based command-line shopping mall system demonstrating practical implement
 
 ## 🛠 Getting Started
 
-### 📦 Prerequisites
+### Prerequisites
 - Java JDK 17+
 - CLI terminal or Java IDE (IntelliJ/Eclipse recommended)
 
-### 🧪 Installation & Usage
+###  Usage
 
-1. **Clone the repository** (if applicable)
-```bash
-git clone https://github.com/yourusername/java-mall-system.git
+- Run the Main Class included on the shoppingmall package.
+Or
+- The jar File included: DP_Project_1242.jar
