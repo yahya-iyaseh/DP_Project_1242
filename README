@@ -1,9 +1,5 @@
 # Java Mall System — DP_Project_1242
 
-![Java](https://img.shields.io/badge/Java-17%2B-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
-![Design Patterns](https://img.shields.io/badge/Design%20Patterns-12-yellow)
-
 A Java-based command-line shopping mall system demonstrating practical implementation of **12 core design patterns** with modular architecture and extensible design.
 
 ## Table of Contents
@@ -27,7 +23,7 @@ A Java-based command-line shopping mall system demonstrating practical implement
 - Order lifecycle simulation
 - Dynamic discount system
 
-## 🔍 Applied Design Patterns
+## Applied Design Patterns
 | Pattern | Implementation |
 |---------|----------------|
 | **Singleton** | Manages single instances of store factories |
