@@ -38,8 +38,6 @@ A Java-based command-line shopping mall system demonstrating practical implement
 | **Decorator** | Dynamic item discounts |
 | **Chain of Responsibility** | Stackable discount logic |
 
-## 🛠 Getting Started
-
 ### Prerequisites
 - Java JDK 17+
 - CLI terminal or Java IDE (IntelliJ/Eclipse recommended)
